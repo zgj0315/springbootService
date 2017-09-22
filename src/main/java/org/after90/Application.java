@@ -11,10 +11,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
     public static void main(String[] args) {
-        log.info("run application");
-        ParaUtil.isTesting = false;//当进行单元测试时，不走这个方法，所以用这个标志来识别当前是否正在单元测试
+        log.info("start run application...");
+        //当进行单元测试时，不走这个方法，所以用这个标志来识别当前是否正在单元测试
+        ParaUtil.isTesting = false;
         SpringApplication.run(Application.class);
-        log.info("application running");
+        log.info("Application is running!");
     }
 
 }
