@@ -49,6 +49,14 @@ if test -d ${PACKAGE_PATH}/log
     mkdir -p ${PACKAGE_PATH}/log
 fi
 
+if test -d ${PACKAGE_PATH}/config
+  then
+    rm -f ${PACKAGE_PATH}/config/*
+  else
+    mkdir -p ${PACKAGE_PATH}/config
+fi
+
+cp ${PROJECT_PATH}/src/main/resources/application.properties ${PACKAGE_PATH}/config/
 cp ${PROJECT_PATH}/target/BOOT-INF/lib/*.jar ${PACKAGE_PATH}/lib/
 cp ${JAR_ORIGINAL} ${PACKAGE_PATH}/lib/${PROJECT_NAME}.jar
 

@@ -1,6 +1,7 @@
 package org.after90.component;
 
 import lombok.extern.slf4j.Slf4j;
+import org.after90.repository.ConfigRepository;
 import org.after90.repository.ESRepository;
 import org.after90.service.PrintMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ public class StartRunnerComponent implements CommandLineRunner {
     private ESRepository es;
     @Autowired
     private PrintMessageService printMessage;
+    @Autowired
+    private ConfigRepository configRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -31,7 +34,8 @@ public class StartRunnerComponent implements CommandLineRunner {
         if (nJUnitTesting == 0) {
             log.info("This is not test.");
             es.initClient();
-            printMessage.doJob();
+//            printMessage.doJob();
+            configRepository.initConfig();
         } else {
             log.info("This is test.");
         }
