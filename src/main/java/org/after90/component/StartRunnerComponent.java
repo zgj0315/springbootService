@@ -30,6 +30,7 @@ public class StartRunnerComponent implements CommandLineRunner {
     public void run(String... args) throws Exception {
         log.info("StartRunnerComponent is run");
         log.info("totalMemory:{}M", Runtime.getRuntime().totalMemory() / 1024 / 1024);
+        //判断当前是否为单元测试，如果是单元测试，工程需要启动的线程可以不启动
         if (ParaUtil.isTesting) {
             log.info("This is a test.");
         } else {
