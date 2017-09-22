@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.after90.repository.ConfigRepository;
 import org.after90.repository.ESRepository;
 import org.after90.service.PrintMessageService;
+import org.after90.utils.ParaUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -18,9 +19,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Order(value = 1)
 public class StartRunnerComponent implements CommandLineRunner {
-
-    @Value("${JUnit_Testing}")
-    private int nJUnitTesting;
     @Autowired
     private ESRepository es;
     @Autowired
@@ -30,17 +28,15 @@ public class StartRunnerComponent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        log.info("spring.config.location:{}", SpringApplication.DEFAULT_CONTEXT_CLASS);
-
         log.info("StartRunnerComponent is run");
         log.info("totalMemory:{}M", Runtime.getRuntime().totalMemory() / 1024 / 1024);
-        if (nJUnitTesting == 0) {
-            log.info("This is not test.");
+        if (ParaUtil.isTesting) {
+            log.info("This is a test.");
+        } else {
+            log.info("This is not a test.");
             es.initClient();
 //            printMessage.doJob();
             configRepository.initConfig();
-        } else {
-            log.info("This is test.");
         }
     }
 }
