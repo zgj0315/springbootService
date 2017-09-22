@@ -1,0 +1,12 @@
+[2017-09-22 09:40:35.009][INFO][org.springframework.boot.StartupInfoLogger.logStarting(StartupInfoLogger.java:48)]-Starting Application v1.0 on MacBook-Pro.local with PID 39087 (/Users/zhaogj/github/zgj0315/springbootService/publish/springbootService-1.0/lib/springbootService-1.0.jar started by zhaogj in /Users/zhaogj/github/zgj0315/springbootService/publish/springbootService-1.0)
+[2017-09-22 09:40:35.025][INFO][org.springframework.boot.SpringApplication.logStartupProfileInfo(SpringApplication.java:593)]-No active profile set, falling back to default profiles: default
+[2017-09-22 09:40:35.081][INFO][org.springframework.context.support.AbstractApplicationContext.prepareRefresh(AbstractApplicationContext.java:583)]-Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@6302bbb1: startup date [Fri Sep 22 09:40:35 CST 2017]; root of context hierarchy
+[2017-09-22 09:40:35.583][INFO][org.springframework.jmx.export.MBeanExporter.afterSingletonsInstantiated(MBeanExporter.java:431)]-Registering beans for JMX exposure on startup
+[2017-09-22 09:40:35.595][INFO][org.after90.component.StartRunnerComponent.run(StartRunnerComponent.java:32)]-StartRunnerComponent is run
+[2017-09-22 09:40:35.598][INFO][org.after90.component.StartRunnerComponent.run(StartRunnerComponent.java:33)]-totalMemory:494M
+[2017-09-22 09:40:35.598][INFO][org.after90.component.StartRunnerComponent.run(StartRunnerComponent.java:35)]-This is not test.
+[2017-09-22 09:40:35.598][INFO][org.after90.repository.ESRepository.initClient(ESRepository.java:12)]-init client
+[2017-09-22 09:40:35.599][INFO][org.after90.repository.ConfigRepository.initConfig(ConfigRepository.java:19)]-strHadoopConfPath:/etc/hadoop/conf/
+[2017-09-22 09:40:35.601][INFO][org.springframework.boot.StartupInfoLogger.logStarted(StartupInfoLogger.java:57)]-Started Application in 0.867 seconds (JVM running for 1.507)
+[2017-09-22 09:40:35.602][INFO][org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:984)]-Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@6302bbb1: startup date [Fri Sep 22 09:40:35 CST 2017]; root of context hierarchy
+[2017-09-22 09:40:35.603][INFO][org.springframework.jmx.export.MBeanExporter.destroy(MBeanExporter.java:449)]-Unregistering JMX-exposed beans on shutdown

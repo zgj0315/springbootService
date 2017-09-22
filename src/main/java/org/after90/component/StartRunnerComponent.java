@@ -7,6 +7,7 @@ import org.after90.service.PrintMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -29,6 +30,8 @@ public class StartRunnerComponent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+        log.info("spring.config.location:{}", SpringApplication.DEFAULT_CONTEXT_CLASS);
+
         log.info("StartRunnerComponent is run");
         log.info("totalMemory:{}M", Runtime.getRuntime().totalMemory() / 1024 / 1024);
         if (nJUnitTesting == 0) {
