@@ -65,7 +65,7 @@ PRG=\"\$0\"
 BIN=\`cd \$(dirname \"\$PRG\"); pwd\`
 HOME=\`dirname \"\$BIN\"\`
 LIB=\`find \${HOME}/lib/ -name \"*.jar\"\`
-LOG=\${HOME}/logs/
+LOG=\${HOME}/log
 classpath=\".\"
 for item in \${LIB}
 do
