@@ -19,25 +19,27 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Order(value = 1)
 public class StartRunnerComponent implements CommandLineRunner {
-    @Autowired
-    private ESRepository es;
-    @Autowired
-    private PrintMessageService printMessage;
-    @Autowired
-    private ConfigRepository configRepository;
 
-    @Override
-    public void run(String... args) throws Exception {
-        log.info("StartRunnerComponent is run");
-        log.info("totalMemory:{}M", Runtime.getRuntime().totalMemory() / 1024 / 1024);
-        //判断当前是否为单元测试，如果是单元测试，工程需要启动的线程可以不启动
-        if (ParaUtil.isTesting) {
-            log.info("This is a test.");
-        } else {
-            log.info("This is not a test.");
-            es.initClient();
+  @Autowired
+  private ESRepository es;
+  @Autowired
+  private PrintMessageService printMessage;
+  @Autowired
+  private ConfigRepository configRepository;
+
+  @Override
+  public void run(String... args) throws Exception {
+    log.info("StartRunnerComponent is run");
+    log.info("totalMemory:{}M", Runtime.getRuntime().totalMemory() / 1024 / 1024);
+    //判断当前是否为单元测试，如果是单元测试，工程需要启动的线程可以不启动
+    if (ParaUtil.isTesting) {
+      log.info("This is a test.");
+    } else {
+      log.info("This is not a test.");
+      log.info("Application is running...");
+      es.initClient();
 //            printMessage.doJob();
-            configRepository.initConfig();
-        }
+      configRepository.initConfig();
     }
+  }
 }

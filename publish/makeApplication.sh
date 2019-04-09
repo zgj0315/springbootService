@@ -81,5 +81,5 @@ echo \"sleep 3s\"
 sleep 3
 cd \${HOME}
 java \${JVM_OPTS} -cp \${classpath} org.after90.Application > /dev/null 2>&1 &
-echo \"dataService start success.\"" > ${PACKAGE_PATH}/bin/restart.sh
+echo \"Java start success.\"" > ${PACKAGE_PATH}/bin/restart.sh
 chmod +x ${PACKAGE_PATH}/bin/restart.sh
